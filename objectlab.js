@@ -6,21 +6,6 @@
 */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const me = {
   name: 'Alaina',
   age: 26
@@ -28,7 +13,6 @@ const me = {
 
 console.log(me.name)
 //or console.log(me['Alaina'])
-
 
 
 
@@ -48,27 +32,17 @@ const dog = {
 
 console.log(dog)
 
-/*
-
-
-
-
-
-
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
-//console.log(dog.name)
-
+console.log(dog.name)
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 console.log(dog['color'])
-
-
 
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
@@ -130,7 +104,7 @@ var carDetails = {
 */
 
 
-// const {color, make, model, year} = car
+ const {color, make, model, year} = car
 
 
 
