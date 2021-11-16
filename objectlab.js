@@ -5,6 +5,22 @@
   and another key of age with the value being your age.
 */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const me = {
   name: 'Alaina',
   age: 26
@@ -14,7 +30,7 @@ console.log(me.name)
 //or console.log(me['Alaina'])
 
 
-/* 
+
 
 //////////////////////////// PROBLEM 2 ////////////////////////////
 
@@ -23,28 +39,37 @@ console.log(me.name)
 //name (a string), color (a string), age (a number),
 //and goodBoy/goodGirl (a boolean).
 
-let dog = {
-  name: 'billy'
-  color: 'brown'
-  age: '1'
-  goodBoy: true
+const dog = {
+  name: 'lola',
+  color: 'brown/black',
+  age: 10,
+  goodGirl: true
 }
+
+console.log(dog)
+
+/*
+
+
+
+
 
 
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
-/*
-console.log(dog.name)
-*/
+
+//console.log(dog.name)
+
 
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
-/*
-console.log(dog['brown'])
 
-*/
+console.log(dog['color'])
+
+
+
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -52,27 +77,28 @@ console.log(dog['brown'])
   Have the values to those keys be strings that are equal to your favorite thing in that category.
 */
 
-/*
+
 let favoriteThings = {
-  band: 'billy strings'
-  food: 'thai'
-  person: 'mom'
-  book: 'braiding sweetgrass'
-  movie: 'the labyrinth'
+  band: 'billy strings',
+  food: 'thai',
+  person: 'mom',
+  book: 'braiding sweetgrass',
+  movie: 'the labyrinth',
   holiday: 'summer solstice'
 
 }
 
-*/
+console.log(favoriteThings)
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' 
   with the value being your favorite car and then another key named 'show' with the value being 
   your favorite show.
 */
-/*
-favoriteThings.car = 'classic bronco'
+
+favoriteThings.car = 'Classic Bronco';
 favoriteThings.show = 'broad city'
-*/
+
+console.log(favoriteThings)
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings 
@@ -81,17 +107,16 @@ favoriteThings.show = 'broad city'
   (If they were either of those things already, change them to something else.)
 */
 
-/*
 
 favoriteThings.food = 'Chicken Nuggets'
 favoriteThings.book = 'Harry Potter'
 
-*/
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
 // Do not edit the code below.
-/*
+
+
 var carDetails = {
   color: 'red',
   make: 'toyota',
@@ -103,10 +128,12 @@ var carDetails = {
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
-/*
-let {color, make, model, year} = vehicleDetails
 
-*/
+
+// const {color, make, model, year} = car
+
+
+
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -115,16 +142,17 @@ let {color, make, model, year} = vehicleDetails
   Use object destructuring to save the object properties to new variables. 
   The property names are firstName, lastName, and title.
 */
-/*
+
+
+
 function greeting( obj ) {
-  let {firstName, lastName, title} = ??
+  const {firstName, lastName, title} = obj
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
-}
-/*
 
+}
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
@@ -137,12 +165,21 @@ function greeting( obj ) {
 */
 
 function totalPopulation (obj) {
-  let {utah, california, texas, arizona} = ??
+  const {utah, california, texas, arizona} = obj
+ 
+  return utah + california + texas + arizona
+}
 
+const states = {
+  utah: 1,
+  california: 2,
+  texas: 3,
+  arizona: 4
 }
 
 
-
+totalPopulation(states)               
+console.log(totalPopulation(states))
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -154,7 +191,20 @@ function totalPopulation (obj) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+
+
+const food = {               //food is the new variable
+  carb: 'bread',
+  fat: 'butter',
+  protein: 'ham'
+}
+
+function ingredients(obj){
+ const {carb, fat, protein} = obj
+  return [carb, fat, protein]              //return the array
+}
+
+
 
 
 
@@ -176,7 +226,11 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-//Code Here
+
+user.name = 'Bryan G. Smith'
+user.email = 'bryan.smith@devmounta.in'
+
+//console.log(user)
 
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
@@ -184,7 +238,7 @@ var user = {
   Using the user object above, delete the users age off of the object.
 */
 
-//Code Here
+delete user.age
 
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
@@ -194,9 +248,18 @@ var user = {
   Print the name of your cat instance using dot notation.
 */
 
-//Code here
+class Cat {
+  constructor(name, age, color){
+    this.name = name;
+    this.age = age;
+    this.color = color
+  }
+}
+  let cat1 = new Cat ('meow', 1, 'brown')       //creating a new constructor with these variables
 
-
+console.log(cat1.age)
+ 
+//let lassie = new Dog ('Lassie', 'Collie', 18) // instance example from interactive lecture
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -206,8 +269,20 @@ var user = {
   Call the castSpell function on the instance of your wizard.
 */
 
-//Code here
+class Wizard {
+  constructor(name, age, favoriteSpell){
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell(){
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+}
 
+let weezard = new Wizard ('alaina', 26, 'leviosa')
+
+weezard.castSpell()
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
@@ -231,9 +306,26 @@ var user = {
     to be newPrice.
 */
 
-//Code Here
+class Phone {
+    constructor(brand, model, storage, color, price){
+  this.brand = brand;
+  this.model = model;
+  this.storage = storage;
+  this.color = color;
+  this.price = price;
+  this.sold = false;
+    }
+  sell(){
+    Phone.sold = true 
+    console.log(`${this.brand} ${this.model} has been sold`)
+  }
 
-  
+  changePrice(newPrice){
+    this.price = newPrice
+  }
+}
+
+
 /*
     Next make three new phone instances using your class.
     Send in values of your choice. They should match these data types:
@@ -244,8 +336,12 @@ var user = {
     - price: number
 */
 
-//Code Here
+let cell = new Phone ('apple', 'iphone8', 64, 'red', 200)
+let cell2 = new Phone ('samsung', 'android1', 20, 'pink', 100)
+let cell3 = new Phone ('google', 'pixel', 124, 'yellow', 50)
 
+cell.changePrice(300)
+console.log(cell)
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -253,7 +349,7 @@ var user = {
   Then console.log that object to see the price change
 */ 
 
-//Code Here 
+cell.sell(true)
 
 
 /*
@@ -262,7 +358,7 @@ var user = {
   Print the value of that phone's sell property to make sure it's been changed to true
 */
 
-//Code Here 
+
 
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
